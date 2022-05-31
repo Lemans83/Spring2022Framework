@@ -14,14 +14,6 @@ import static Web.MyDriver.getDriver;
 public class LandingPage extends Commands {
 
 
-
-
-
-
-
-
-
-
     // My Xpaths
     By todayBar = By.xpath("(//span[@class='bar'])[1]");
     By findMinTemp = By.xpath("(//span[@class='minTemp'])[1]");
