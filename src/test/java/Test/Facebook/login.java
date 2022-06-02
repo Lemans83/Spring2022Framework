@@ -1,4 +1,4 @@
-package Test;
+package Test.Facebook;
 
 import Helper.Misc;
 import Pages.Facebook.LandingPage;

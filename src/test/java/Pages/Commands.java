@@ -16,9 +16,7 @@ public class Commands {
     // Create a local method to type in the webElement
     public void type(By locator, String data) {
         findWebElement(locator).sendKeys(data);
-
     }
-
 
     // Create a local method to click on the webElement
     public void clickIt(By locator) {
@@ -41,5 +39,8 @@ public class Commands {
     public boolean isElementDisplayed(By locator) {
         return findWebElement(locator).isDisplayed();
     }
+
+    // Create a local method to sroll by pixel
+
 
 }
