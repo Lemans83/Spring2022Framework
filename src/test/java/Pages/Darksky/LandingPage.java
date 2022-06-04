@@ -22,8 +22,12 @@ public class LandingPage extends Commands {
     By findLowTemp = By.xpath("(//*[@class='lowTemp swap'])[1]//span[1]");
 
     //My methods
-    public String dateFromTimeMachine(){
+    public void clickTimeMcahine(){
         findWebElement(By.xpath("//a[text()='Time Machine']")).click();
+    }
+
+    public String dateFromTimeMachine(){
+        //findWebElement(By.xpath("//a[text()='Time Machine']")).click();
         String currentDate = findWebElement(By.xpath("//td[@class='is-today']")).getText();
         //System.out.println(currentDate);
         return currentDate;

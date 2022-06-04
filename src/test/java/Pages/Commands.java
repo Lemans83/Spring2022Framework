@@ -2,8 +2,11 @@ package Pages;
 
 import Web.MyDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class Commands {
 
@@ -35,6 +38,16 @@ public class Commands {
         dropdown.selectByVisibleText(dataToSelect);
     }
 
+    public void selectFromSuggestions(By locator, String userSuggestion) {
+        List<WebElement> allSuggestions = MyDriver.getDriver().findElements(locator);
+        for (WebElement suggestion : allSuggestions) {
+            if (suggestion.getText().equalsIgnoreCase(userSuggestion)) {
+                suggestion.click();
+                break;
+            }
+        }
+    }
+
     // Create a local method to find if element is displayed
     public boolean isElementDisplayed(By locator) {
         return findWebElement(locator).isDisplayed();
@@ -42,5 +55,12 @@ public class Commands {
 
     // Create a local method to sroll by pixel
 
+    public void enterKey(WebElement element){
+        element.sendKeys(Keys.RETURN);
+    }
+
+    public WebElement returnWebElement(By by){
+        return  MyDriver.getDriver().findElement(by);
+    }
 
 }
