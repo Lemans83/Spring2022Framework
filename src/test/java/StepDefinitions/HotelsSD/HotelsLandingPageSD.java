@@ -16,17 +16,20 @@ public class HotelsLandingPageSD {
 
 
     //Task 4
-    @Given("^I launch Hotels website$")
-    public void launchPage() {
-        //myHotels.launchHotels();
-        MyDriver.launchUrlOnNewWindow("https://www.hotels.com");
-    }
+//    @Given("^I launch Hotels website$")
+//    public void launchPage() {
+//        //myHotels.launchHotels();
+//        MyDriver.launchUrlOnNewWindow("https://www.hotels.com");
+//    }
 
 //    @Given("I launch Hotels website")
 //    public void launchHotelsPage(){myHotels.launchHotels();
 //    }
     @When("I click search button")
-    public void clickSearchButton(){myHotels.clickSearch();}
+    public void clickSearchButton(){
+        myHotels.clickSearch();
+        Misc.pause(5);
+    }
 
     @Then("I verify if the destination box is displayed")
     public void errorBoxdisplayed(){
@@ -38,8 +41,10 @@ public class HotelsLandingPageSD {
      @When("I click the travelers box")
       public void clickTravbutton(){myHotels.clickTravButton();
     }
-    @And("I select child traveler")
-    public void selectTravButton(){myHotels.addNumberofChild();}
+    @When("I select child traveler")
+    public void selectTravButton() {
+        myHotels.addNumberofChild(2);
+    }
 
     @Then("I verify the age error is displayed")
     public void errorAgeIsdispalyed(){Assert.assertTrue(myHotels.ageErrordisplayed());}
@@ -70,6 +75,22 @@ public class HotelsLandingPageSD {
         Misc.pause(3);
         Assert.assertEquals(sPage.returnAfter(),myHotels.returnBefore());
         MyDriver.quitWindows();
+    }
+
+
+    // TC21 - Calendar
+    @When("I select August 1, 2022 as Check-in")
+    public void selectDate() {
+        myHotels.clickCheckInBtn();
+        myHotels.selectDayMonthYear("1 August 2022");
+        myHotels.clickCalendarDoneBtn();
+    }
+
+    @When("I select August 10, 2022 as Check out")
+    public void selectCheckOutDate() {
+        myHotels.clickCheckOutBtn();
+        myHotels.selectDayMonthYear("10 August 2022");
+        myHotels.clickCalendarDoneBtn();
     }
 
 
