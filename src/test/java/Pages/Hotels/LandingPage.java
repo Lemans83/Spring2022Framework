@@ -41,6 +41,21 @@ public class LandingPage extends Commands {
     By destinationInputLocator = By.id("location-field-destination");
     By destinationSuggestions = By.xpath("//div[@class='uitk-typeahead-results']//div[contains(@class,'truncat') and not(contains(@class,'uitk'))]");
 
+    By moreTravelDropdownLocator = By.xpath("//nav/div/button");
+    By dealsPageLinkLocator = By.xpath("//nav//div[@class='uitk-list']/a[@href='/hotel-deals/']");
+
+
+    public void clickMoreTravelDropdown() {
+        clickIt(moreTravelDropdownLocator);
+        Misc.pause(2);
+    }
+
+    public void clickDealsPageOption () {
+        clickIt(dealsPageLinkLocator);
+        Misc.pause(4);
+    }
+
+
     //Deepak's methods
     public void clickCheckInBox() {
         clickIt(checkInDateBoxLocator);
@@ -86,17 +101,17 @@ public class LandingPage extends Commands {
     }
 
     //My locators
-    By searchbutton = By.xpath("//button[@data-testid='submit-button']");
+    By searchbutton = By.id("submit_button");
     By errorbox = By.xpath("//h3[@class='uitk-error-summary-heading']");
 
-    By travelerbutton = By.xpath("//button[@data-testid='travelers-field-trigger']");
-    By selecttraveler = By.xpath("(//span[@class='uitk-step-input-button'])[4]");
+    By travelerbutton = By.xpath("//button[@type='button' and contains(text(),'travelers')]");
+    By selecttraveler = By.xpath("//input[@aria-label='Children Ages 0 to 17']/following-sibling::button");
     By agerrorlocator = By.xpath("//h3[@class='uitk-error-summary-heading']");
-    By clickdonebutton = By.xpath("//button[@data-testid='guests-done-button']");
+    By clickdonebutton = By.xpath("//button[@id='traveler_selector_done_button']");
     By childgebox = By.xpath("//select[@id='child-age-input-0-0']");
 
     By destinationLocator = By.xpath("//button[@aria-label='Going to']");
-    By destinationInput = By.xpath("//input[@data-stid='location-field-destination-menu-input']");
+    By destinationInput = By.id("destination_form_field");
     By destinationSuggestions1 = By.xpath("//div[@class='uitk-typeahead-results']//div[contains(@class,'truncat') and not(contains(@class,'uitk'))]");
 
     By travelerCountLocator = By.xpath("//button[@data-testid='travelers-field-trigger']");
@@ -113,13 +128,13 @@ public class LandingPage extends Commands {
     By privacyPageHeadingLocator = By.xpath("//h2[text()='Privacy Statement']");
 
     //Locators for TC 19
-    By checkDatelocator = By.xpath("//button[@id='d1-btn']");
+    By checkDatelocator = By.id("date_form_field-btn");
     By verifTextMessageLocator = By.xpath("//span[text()='Tell us how we can improve our site']");
     By veriShareFeedbackLocator = By.xpath("//a[text()='Share feedback']");
 
     // --------- Calendar ----------
     // Check in/out related locators
-    By checkInBoxLocator = By.id("d1-btn");
+    By checkInBoxLocator = By.id("date_form_field-btn");
     By checkOutBoxLocator = By.id("d2-btn");
     By checkOutDaysLocator = By.xpath("//h2[text()='June 2022']/following-sibling::table//button[@data-day]");
 
@@ -153,6 +168,7 @@ public class LandingPage extends Commands {
     }
 
     public void clickTravButton() {
+        Misc.pause(1);
         clickIt(travelerbutton);
     }
 
@@ -203,6 +219,7 @@ public class LandingPage extends Commands {
 
     public void FindSignUpLocoator() {
         clickIt(hotelsSignupLocator);
+        Misc.pause(3);
     }
 
     public void termsAndConditions() {

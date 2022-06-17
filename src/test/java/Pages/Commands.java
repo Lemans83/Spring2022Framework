@@ -144,11 +144,20 @@ public class Commands {
             }
         }
     }
+    public void scrollByPixel(String yValue) {
+        JavascriptExecutor js = (JavascriptExecutor) MyDriver.getDriver();
+        //js.executeScript("scrollBy(0,900)");
+        js.executeScript("scrollBy(0," + yValue + ")");
+    }
 
     public void switchToAlert() {
         WebDriverWait eWait = new WebDriverWait(MyDriver.getDriver(), 20);
         eWait.until(ExpectedConditions.alertIsPresent());
         myAlert = MyDriver.getDriver().switchTo().alert();
+    }
+
+    public void backToPreviousPage(){
+        MyDriver.getDriver().navigate().back();
     }
 
     public void clickPositiveActionBtnOnAlert() {

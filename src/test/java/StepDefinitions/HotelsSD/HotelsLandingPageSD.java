@@ -39,7 +39,8 @@ public class HotelsLandingPageSD {
 
  //Task 5
      @When("I click the travelers box")
-      public void clickTravbutton(){myHotels.clickTravButton();
+      public void clickTravbutton(){
+        myHotels.clickTravButton();
     }
     @When("I select child traveler")
     public void selectTravButton() {
@@ -79,10 +80,12 @@ public class HotelsLandingPageSD {
 
 
     // TC21 - Calendar
-    @When("I select August 1, 2022 as Check-in")
+    //@When("I select August 1, 2022 as Check-in")
+    @When("I select August 1-10, 2022 from calendar")
     public void selectDate() {
         myHotels.clickCheckInBtn();
         myHotels.selectDayMonthYear("1 August 2022");
+        myHotels.selectDayMonthYear("10 August 2022");
         myHotels.clickCalendarDoneBtn();
     }
 

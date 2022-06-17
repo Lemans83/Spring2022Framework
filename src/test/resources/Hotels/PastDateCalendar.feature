@@ -7,9 +7,12 @@ Feature: Hotels Calendar
   Then Verify Past dates are disabled
   Then Verify Back button on current month is disabled
   And  Click on Done button on calendar
-  And  Click on Checkout Calendar
-  Then Verify Past dates are disabled
-  Then Verify Back button on current month is disabled
+
+  # Following steps are no longer required.
+
+#  And  Click on Checkout Calendar
+#  Then Verify Past dates are disabled
+#  Then Verify Back button on current month is disabled
 
 
 
