@@ -8,10 +8,14 @@ Feature: Test Feature
     Given I launch Hotels website
     When I click the travelers box
     And I select child traveler
-    Then I verify the age error is displayed
-    And I select age in the age-box
-    Then I verify the age error is not displayed
+
+    # in following step, need to separate saving traveler count from clicking done btn
     And I click done button
+
+#    Then I verify the age error is displayed
+#    And I select age in the age-box
+#    Then I verify the age error is not displayed
+#    And I click done button
     And I type destination
     And I select destination
     And I click search button

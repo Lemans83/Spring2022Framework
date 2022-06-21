@@ -16,6 +16,7 @@ public class TermsAndConditionsSD {
     public void launchHotels() {
         MyDriver.launchUrlOnNewWindow("https://www.hotels.com");
     }
+
     @When("I click Sign in link")
     public void clicksignInLink(){
         finalProject.FindHotelSigninLocator();
